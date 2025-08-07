@@ -10,8 +10,6 @@ export default defineConfig({
   base: '/',
   output: 'static',
   
-  // Build to docs directory for GitHub Pages
-  outDir: '../docs',
   
   // Performance optimizations
   build: {
