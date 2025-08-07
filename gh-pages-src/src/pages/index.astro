@@ -59,6 +59,14 @@ const pageDescription = "Senior Engineering Manager specializing in scalable sof
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    
+    <!-- System Dark Mode Support -->
+    <script>
+      // Apply system dark mode preference immediately to prevent flash
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   
   <body class="antialiased">
@@ -78,7 +86,7 @@ const pageDescription = "Senior Engineering Manager specializing in scalable sof
                 alt="iamrichardD GitHub Avatar"
                 class="w-20 h-20 rounded-full border-4 border-primary-200 dark:border-primary-700 shadow-lg"
               />
-              <h1 class="text-secondary-900 dark:text-secondary-100 m-0">
+              <h1 class="text-secondary-900 dark:text-secondary-100 text-4xl md:text-5xl font-semibold m-0">
                 iamrichardD
               </h1>
             </div>
@@ -117,7 +125,7 @@ const pageDescription = "Senior Engineering Manager specializing in scalable sof
       <section id="experience" class="section bg-secondary-50 dark:bg-secondary-800/50">
         <div class="container-custom">
           <div class="text-center mb-16">
-            <h2 class="mb-6">Core Competencies</h2>
+            <h2 class="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">Core Competencies</h2>
             <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
               Expertise spanning technical leadership, software architecture, and team development
             </p>
@@ -605,7 +613,7 @@ const pageDescription = "Senior Engineering Manager specializing in scalable sof
       <section id="timeline" class="section bg-secondary-50 dark:bg-secondary-800/50">
         <div class="container-custom">
           <div class="text-center mb-16">
-            <h2 class="mb-6">Career Journey</h2>
+            <h2 class="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">Career Journey</h2>
             <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
               A chronological look at 15+ years of engineering leadership, innovation, and growth across diverse technology domains.
             </p>
@@ -817,7 +825,7 @@ const pageDescription = "Senior Engineering Manager specializing in scalable sof
       <section id="contact" class="section">
         <div class="container-custom">
           <div class="max-w-2xl mx-auto text-center">
-            <h2 class="mb-6">Let's Connect</h2>
+            <h2 class="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">Let's Connect</h2>
             <p class="text-lg text-secondary-600 dark:text-secondary-400 mb-8">
               Interested in collaborating or discussing opportunities? I'd love to hear from you.
             </p>

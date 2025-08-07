@@ -44,6 +44,14 @@ const pageDescription = "Comprehensive resume for iamrichardD - Senior Engineeri
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    
+    <!-- System Dark Mode Support -->
+    <script>
+      // Apply system dark mode preference immediately to prevent flash
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   
   <body class="antialiased">
@@ -82,9 +90,7 @@ const pageDescription = "Comprehensive resume for iamrichardD - Senior Engineeri
                   iamrichardD
                 </h1>
               </div>
-              <p class="text-xl md:text-2xl text-secondary-600 dark:text-secondary-300 mb-8">
-                Senior Engineering Manager - Professional Resume
-              </p>
+              <p class="text-xl md:text-2xl text-secondary-600 dark:text-secondary-300 mb-8">Senior Engineering Manager - Resume</p>
             </div>
           </div>
         </div>
