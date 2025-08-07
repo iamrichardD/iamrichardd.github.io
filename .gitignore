@@ -1,0 +1,29 @@
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Claude Code workspace
+.claude/
+
+# Build artifacts from other tools
+.project/
+
+# Node.js dependencies
+node_modules/
+gh-pages-src/node_modules/
+
+# Astro build artifacts
+.astro/
+gh-pages-src/.astro/
+
+# Package lock files in subdirectories
+gh-pages-src/package-lock.json
