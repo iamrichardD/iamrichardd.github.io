@@ -1,0 +1,123 @@
+---
+import { getCollection, render } from 'astro:content';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{project.data.title} - iamrichardD</title>
+    <meta name="description" content={project.data.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100 antialiased">
+    <main id="main-content" class="min-h-screen">
+      <!-- Project Header -->
+      <section class="section bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-secondary-900 dark:to-secondary-800 border-b border-secondary-200 dark:border-secondary-700">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto">
+            <a href="/" class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mb-8">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              Back to Home
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">{project.data.title}</h1>
+            <p class="text-xl text-secondary-600 dark:text-secondary-400 mb-8 leading-relaxed max-w-3xl">
+              {project.data.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-6 mb-8">
+              <div>
+                <span class="block text-xs uppercase tracking-wider text-secondary-500 mb-1">Role</span>
+                <span class="font-semibold text-secondary-900 dark:text-secondary-100">{project.data.role}</span>
+              </div>
+              <div>
+                <span class="block text-xs uppercase tracking-wider text-secondary-500 mb-1">Published</span>
+                <span class="font-semibold text-secondary-900 dark:text-secondary-100">{project.data.publishDate.toLocaleDateString()}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+              <a href={project.data.links.github} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                View GitHub Repository
+              </a>
+              {project.data.links.site && (
+                <a href={project.data.links.site} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  View Project Site
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Study Content -->
+      <section class="section">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-[1fr_250px] gap-12">
+              <!-- Main Content -->
+              <article class="prose prose-lg dark:prose-invert max-w-none">
+                <Content />
+              </article>
+
+              <!-- Sidebar Sidebar -->
+              <aside class="space-y-8">
+                <div>
+                  <h3 class="text-sm uppercase tracking-wider text-secondary-500 font-bold mb-4">Methodology</h3>
+                  <div class="flex flex-wrap gap-2">
+                    {project.data.methods.map((method) => (
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium border border-primary-200 dark:border-primary-800">
+                        {method}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-sm uppercase tracking-wider text-secondary-500 font-bold mb-4">Technologies</h3>
+                  <div class="flex flex-wrap gap-2">
+                    {project.data.tags.map((tag) => (
+                      <span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 rounded-full text-xs font-medium border border-secondary-200 dark:border-secondary-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer CTA -->
+      <section class="section-sm bg-secondary-50 dark:bg-secondary-800/50">
+        <div class="container-custom text-center">
+          <h2 class="text-2xl font-bold mb-6">Interested in High-Rigor Architecture?</h2>
+          <p class="text-lg text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto">
+            I specialize in building deterministic systems that reduce organizational toil. Let's discuss how I can help your team scale.
+          </p>
+          <a href="/#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
