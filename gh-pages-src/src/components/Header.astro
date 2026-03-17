@@ -11,7 +11,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
 const navLinks = [
   { name: 'Projects', href: '/projects' },
-  { name: 'Pharos', href: '/projects/pharos', featured: true },
+  { name: 'Pharos', href: '/projects/pharos' },
   { name: 'Resume', href: '/resume' },
 ];
 ---
@@ -35,12 +35,7 @@ const navLinks = [
       {navLinks.map((link) => (
         <a 
           href={link.href}
-          class:list={[
-            "text-sm font-medium transition-colors",
-            link.featured 
-              ? "px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-sm" 
-              : "text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
-          ]}
+          class="text-sm font-medium transition-colors text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
         >
           {link.name}
         </a>
@@ -76,12 +71,7 @@ const navLinks = [
       {navLinks.map((link) => (
         <a 
           href={link.href}
-          class:list={[
-            "text-lg font-medium p-3 rounded-xl transition-colors text-center",
-            link.featured 
-              ? "bg-primary-600 text-white hover:bg-primary-700" 
-              : "text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800"
-          ]}
+          class="text-lg font-medium p-3 rounded-xl transition-colors text-center text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800"
         >
           {link.name}
         </a>
