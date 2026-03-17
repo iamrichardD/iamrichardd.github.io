@@ -27,3 +27,4 @@ gh-pages-src/.astro/
 
 # Package lock files in subdirectories
 gh-pages-src/package-lock.json
+gh-pages-src/dist/

@@ -1,0 +1,142 @@
+---
+/**
+ * Project: iamrichardd.github.io
+ * Component: Header
+ * File: Header.astro
+ * Author: Richard D. (https://github.com/iamrichardd)
+ * Purpose: Global navigation and brand identity component.
+ * Traceability: Responsive Navigation Improvement
+ */
+import DarkModeToggle from './DarkModeToggle.astro';
+
+const navLinks = [
+  { name: 'Projects', href: '/projects' },
+  { name: 'Pharos', href: '/projects/pharos', featured: true },
+  { name: 'Resume', href: '/resume' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-secondary-900/80 backdrop-blur-md border-b border-secondary-200 dark:border-secondary-800">
+  <div class="container-custom h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <img 
+        src="https://avatars.githubusercontent.com/u/182445865?v=4&s=32" 
+        alt="iamrichardD Logo"
+        class="w-8 h-8 rounded-full border border-primary-200 dark:border-primary-700"
+      />
+      <span class="text-xl font-bold tracking-tight text-secondary-900 dark:text-secondary-100">
+        iamrichardD
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class:list={[
+            "text-sm font-medium transition-colors",
+            link.featured 
+              ? "px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-sm" 
+              : "text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400"
+          ]}
+        >
+          {link.name}
+        </a>
+      ))}
+      <div class="h-6 w-px bg-secondary-200 dark:bg-secondary-800 mx-2"></div>
+      <DarkModeToggle />
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center gap-4 md:hidden">
+      <DarkModeToggle />
+      <button 
+        id="mobile-menu-toggle"
+        class="p-2 text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800 rounded-lg transition-colors"
+        aria-label="Toggle mobile menu"
+      >
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav 
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-full left-0 right-0 bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-800 py-6 px-4 shadow-xl"
+  >
+    <div class="flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class:list={[
+            "text-lg font-medium p-3 rounded-xl transition-colors text-center",
+            link.featured 
+              ? "bg-primary-600 text-white hover:bg-primary-700" 
+              : "text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800"
+          ]}
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initMobileMenu() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!toggle || !menu || !menuIcon || !closeIcon) return;
+
+    let isOpen = false;
+
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu on navigation
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        isOpen = false;
+        menu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Init on load and page changes
+  initMobileMenu();
+  document.addEventListener('astro:page-load', initMobileMenu);
+</script>
+
+<style>
+  header {
+    /* Offset main content so it's not hidden under the fixed header */
+    transition: transform 0.3s ease-in-out;
+  }
+</style>
