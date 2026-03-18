@@ -35,10 +35,10 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
               </h1>
             </div>
             <p class="text-xl md:text-2xl text-secondary-600 dark:text-secondary-300 mb-8">
-              Senior Engineering Manager
+              Senior Engineering Leader & Agentic Systems Architect
             </p>
             <p class="text-lg text-secondary-700 dark:text-secondary-400 mb-12 max-w-2xl mx-auto">
-              Transforming ideas into scalable software solutions. Leading high-performance teams to deliver innovative products that make a difference.
+              Architecting deterministic infrastructure that bridges the gap between human engineering and AI-native automation. Building high-performance teams and zero-trust systems that eliminate operational toil.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/resume" class="btn btn-outline">View Resume</a>
@@ -53,9 +53,7 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
         <div class="container-custom">
           <div class="max-w-3xl mx-auto text-center">
             <p class="text-lg text-secondary-600 dark:text-secondary-400 leading-relaxed">
-              With over 15 years of experience in software engineering and team leadership, 
-              I specialize in building scalable architectures, fostering innovation, and 
-              driving technical excellence across diverse technology stacks.
+              With over 15 years of experience scaling global engineering teams and AWS cloud architectures, my focus is solving the next enterprise bottleneck: human-AI collaboration. By applying strict methodological rigor—like Vertical Slice Architecture and TDD—I build deterministic systems that allow organizations to scale AI capabilities safely and reliably.
             </p>
           </div>
         </div>
@@ -72,239 +70,6 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
           </div>
           
           <div class="max-w-3xl mx-auto space-y-8">
-            
-            <!-- Team Leadership Card -->
-            <div class="expandable-card card hover:border-primary-500">
-              <button 
-                class="card-trigger w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-xl"
-                aria-expanded="false"
-                aria-controls="card-content-team-leadership"
-              >
-                <div class="flex items-start justify-between">
-                  <div class="flex-1">
-                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
-                      <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                      </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-secondary-900 dark:text-secondary-100">Team Leadership</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400">
-                      Building and mentoring high-performance engineering teams of up to 14 developers across international locations.
-                    </p>
-                  </div>
-                  <div class="expand-indicator ml-4 flex-shrink-0 text-secondary-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </button>
-
-              <div 
-                class="card-content hidden overflow-hidden"
-                id="card-content-team-leadership"
-                aria-hidden="true"
-              >
-                <div class="px-6 pb-6">
-                  <div class="mb-6 pt-4 border-t border-secondary-100 dark:border-secondary-700">
-                    <p class="text-secondary-700 dark:text-secondary-300 leading-relaxed text-lg">
-                      Proven track record of building and scaling high-performing software development teams across global organizations. Expert in fostering cross-functional collaboration, implementing process improvements, and developing talent through mentoring and coaching.
-                    </p>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Key Achievements</h4>
-                    <ul class="space-y-4">
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>Global Team Scaling:</strong> Successfully managed and mentored teams of up to 14 developers across international locations, delivering 30+ applications with improved code quality and predictable timelines.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">14-person teams • 30+ applications delivered</span>
-                        </div>
-                      </li>
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>Process Transformation:</strong> Introduced code reviews, CI/CD pipelines, and standardized practices, significantly reducing failed deployments and enabling distributed team collaboration.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Reduced deployment failures • Streamlined processes</span>
-                        </div>
-                      </li>
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>Cross-Functional Leadership:</strong> Fostered collaboration between development and operations teams, significantly reducing operational toil for Network Engineers through joint initiatives.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Reduced operational overhead • Enhanced collaboration</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Technologies & Methods</h4>
-                    <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Agile/Scrum</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">eXtreme Programming</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Mentoring</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">CI/CD</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">JIRA</span>
-                    </div>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Insights</h4>
-                    <div class="bg-secondary-50 dark:bg-secondary-700/50 rounded-lg p-4">
-                      <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </div>
-                        <div class="flex-1">
-                          <h5 class="font-semibold text-secondary-900 dark:text-secondary-100 mb-2">Leadership in Software Development: Beyond Code That Just Works</h5>
-                          <p class="text-sm text-secondary-600 dark:text-secondary-400 mb-3 leading-relaxed">
-                            Exploring the evolution from technical contributor to engineering leader, focusing on team dynamics, process optimization, and building sustainable development cultures.
-                          </p>
-                          <a 
-                            href="https://www.linkedin.com/pulse/leadership-software-development-beyond-code-just-works-richard-d-z38lc/?trackingId=45ghVrMGRJCpyB5PMp24%2Bw%3D%3D" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
-                          >
-                            Read Article
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Cloud Architecture Card -->
-            <div class="expandable-card card hover:border-primary-500">
-              <button 
-                class="card-trigger w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-xl"
-                aria-expanded="false"
-                aria-controls="card-content-cloud-architecture"
-              >
-                <div class="flex items-start justify-between">
-                  <div class="flex-1">
-                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
-                      <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                      </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-secondary-900 dark:text-secondary-100">Cloud Architecture</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400">
-                      AWS-certified architect specializing in microservices, DevSecOps, and scalable backend systems.
-                    </p>
-                  </div>
-                  <div class="expand-indicator ml-4 flex-shrink-0 text-secondary-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </button>
-
-              <div 
-                class="card-content hidden overflow-hidden"
-                id="card-content-cloud-architecture"
-                aria-hidden="true"
-              >
-                <div class="px-6 pb-6">
-                  <div class="mb-6 pt-4 border-t border-secondary-100 dark:border-secondary-700">
-                    <p class="text-secondary-700 dark:text-secondary-300 leading-relaxed text-lg">
-                      Expert in designing and implementing scalable cloud-native solutions with deep AWS expertise. Specializes in microservices architecture, serverless computing, and infrastructure-as-code practices.
-                    </p>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Key Achievements</h4>
-                    <ul class="space-y-4">
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>AWS Migration & Modernization:</strong> Led migration of multiple legacy applications to modern AWS infrastructure, reducing release times and improving security posture through automated pipelines.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Multiple app migrations • Improved release velocity</span>
-                        </div>
-                      </li>
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>Microservices Architecture:</strong> Designed highly scalable backend microservices using AWS products (EC2, SQS, RDS Aurora PostgreSQL, Lambda, ECS, Fargate) with Terraform for infrastructure-as-code.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">30+ cloud-native services • Infrastructure-as-code</span>
-                        </div>
-                      </li>
-                      <li class="flex items-start">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div class="flex-1">
-                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
-                            <strong>DevSecOps Implementation:</strong> Implemented comprehensive DevSecOps practices using Docker and Jenkins for enhanced security, predictability, and efficiency across deployment pipelines.
-                          </p>
-                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Enhanced security • Automated pipelines</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Technologies & Methods</h4>
-                    <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">AWS</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Terraform</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Docker</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Microservices</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Jenkins</span>
-                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">PostgreSQL</span>
-                    </div>
-                  </div>
-
-                  <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Insights</h4>
-                    <div class="bg-secondary-50 dark:bg-secondary-700/50 rounded-lg p-4">
-                      <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </div>
-                        <div class="flex-1">
-                          <h5 class="font-semibold text-secondary-900 dark:text-secondary-100 mb-2">Enhancing Software Quality: Fail Fast</h5>
-                          <p class="text-sm text-secondary-600 dark:text-secondary-400 mb-3 leading-relaxed">
-                            Deep dive into fail-fast principles for building resilient cloud architectures, covering early detection strategies, automated testing, and quality assurance practices that prevent costly production failures.
-                          </p>
-                          <a 
-                            href="https://www.linkedin.com/pulse/enhancing-software-quality-fail-fast-richard-d-dsaqc/?trackingId=lxbFxYcbSnuUET8fwMpnfg%3D%3D" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
-                          >
-                            Read Article
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             
             <!-- Systems Architecture & Agentic Infrastructure Card -->
             <div class="expandable-card card hover:border-primary-500">
@@ -517,6 +282,240 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
                 </div>
               </div>
             </div>
+            
+            <!-- Cloud Architecture Card -->
+            <div class="expandable-card card hover:border-primary-500">
+              <button 
+                class="card-trigger w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-xl"
+                aria-expanded="false"
+                aria-controls="card-content-cloud-architecture"
+              >
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                      <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary-900 dark:text-secondary-100">Cloud Architecture</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400">
+                      AWS-certified architect specializing in microservices, DevSecOps, and scalable backend systems.
+                    </p>
+                  </div>
+                  <div class="expand-indicator ml-4 flex-shrink-0 text-secondary-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+
+              <div 
+                class="card-content hidden overflow-hidden"
+                id="card-content-cloud-architecture"
+                aria-hidden="true"
+              >
+                <div class="px-6 pb-6">
+                  <div class="mb-6 pt-4 border-t border-secondary-100 dark:border-secondary-700">
+                    <p class="text-secondary-700 dark:text-secondary-300 leading-relaxed text-lg">
+                      Expert in designing and implementing scalable cloud-native solutions with deep AWS expertise. This secure, highly-available infrastructure serves as the mandatory bedrock required to host and scale autonomous agentic systems and microservices.
+                    </p>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Key Achievements</h4>
+                    <ul class="space-y-4">
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>AWS Migration & Modernization:</strong> Led migration of multiple legacy applications to modern AWS infrastructure, reducing release times and improving security posture through automated pipelines.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Multiple app migrations • Improved release velocity</span>
+                        </div>
+                      </li>
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>Microservices Architecture:</strong> Designed highly scalable backend microservices using AWS products (EC2, SQS, RDS Aurora PostgreSQL, Lambda, ECS, Fargate) with Terraform for infrastructure-as-code.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">30+ cloud-native services • Infrastructure-as-code</span>
+                        </div>
+                      </li>
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>DevSecOps Implementation:</strong> Implemented comprehensive DevSecOps practices using Docker and Jenkins for enhanced security, predictability, and efficiency across deployment pipelines.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Enhanced security • Automated pipelines</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Technologies & Methods</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">AWS</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Terraform</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Docker</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Microservices</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Jenkins</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">PostgreSQL</span>
+                    </div>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Insights</h4>
+                    <div class="bg-secondary-50 dark:bg-secondary-700/50 rounded-lg p-4">
+                      <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                          <h5 class="font-semibold text-secondary-900 dark:text-secondary-100 mb-2">Enhancing Software Quality: Fail Fast</h5>
+                          <p class="text-sm text-secondary-600 dark:text-secondary-400 mb-3 leading-relaxed">
+                            Deep dive into fail-fast principles for building resilient cloud architectures, covering early detection strategies, automated testing, and quality assurance practices that prevent costly production failures.
+                          </p>
+                          <a 
+                            href="https://www.linkedin.com/pulse/enhancing-software-quality-fail-fast-richard-d-dsaqc/?trackingId=lxbFxYcbSnuUET8fwMpnfg%3D%3D" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
+                          >
+                            Read Article
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Leadership Card -->
+            <div class="expandable-card card hover:border-primary-500">
+              <button 
+                class="card-trigger w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-xl"
+                aria-expanded="false"
+                aria-controls="card-content-team-leadership"
+              >
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                      <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary-900 dark:text-secondary-100">Team Leadership</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400">
+                      Building and mentoring high-performance engineering teams of up to 14 developers across international locations.
+                    </p>
+                  </div>
+                  <div class="expand-indicator ml-4 flex-shrink-0 text-secondary-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+
+              <div 
+                class="card-content hidden overflow-hidden"
+                id="card-content-team-leadership"
+                aria-hidden="true"
+              >
+                <div class="px-6 pb-6">
+                  <div class="mb-6 pt-4 border-t border-secondary-100 dark:border-secondary-700">
+                    <p class="text-secondary-700 dark:text-secondary-300 leading-relaxed text-lg">
+                      Acting as a Collaborative Force Multiplier, I have a proven track record of scaling high-performing development teams. By strictly enforcing architectural standards (CI/CD, Agile, VSA), I achieve "Dev Parity"—ensuring consistent, high-velocity delivery whether managing global human engineers or a fleet of specialized AI subagents.
+                    </p>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Key Achievements</h4>
+                    <ul class="space-y-4">
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>Global Team Scaling:</strong> Successfully managed and mentored teams of up to 14 developers across international locations, delivering 30+ applications with improved code quality and predictable timelines.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">14-person teams • 30+ applications delivered</span>
+                        </div>
+                      </li>
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>Process Transformation:</strong> Introduced code reviews, CI/CD pipelines, and standardized practices, significantly reducing failed deployments and enabling distributed team collaboration.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Reduced deployment failures • Streamlined processes</span>
+                        </div>
+                      </li>
+                      <li class="flex items-start">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div class="flex-1">
+                          <p class="text-secondary-700 dark:text-secondary-300 mb-2">
+                            <strong>Cross-Functional Leadership:</strong> Fostered collaboration between development and operations teams, significantly reducing operational toil for Network Engineers through joint initiatives.
+                          </p>
+                          <span class="text-primary-600 dark:text-primary-400 font-medium text-sm">Reduced operational overhead • Enhanced collaboration</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Technologies & Methods</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Agile/Scrum</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">eXtreme Programming</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">Mentoring</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">CI/CD</span>
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">JIRA</span>
+                    </div>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Insights</h4>
+                    <div class="bg-secondary-50 dark:bg-secondary-700/50 rounded-lg p-4">
+                      <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                          <h5 class="font-semibold text-secondary-900 dark:text-secondary-100 mb-2">Leadership in Software Development: Beyond Code That Just Works</h5>
+                          <p class="text-sm text-secondary-600 dark:text-secondary-400 mb-3 leading-relaxed">
+                            Exploring the evolution from technical contributor to engineering leader, focusing on team dynamics, process optimization, and building sustainable development cultures.
+                          </p>
+                          <a 
+                            href="https://www.linkedin.com/pulse/leadership-software-development-beyond-code-just-works-richard-d-z38lc/?trackingId=45ghVrMGRJCpyB5PMp24%2Bw%3D%3D" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
+                          >
+                            Read Article
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             
           </div>
         </div>
