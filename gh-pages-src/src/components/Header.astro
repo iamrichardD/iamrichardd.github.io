@@ -5,7 +5,7 @@
  * File: Header.astro
  * Author: Richard D. (https://github.com/iamrichardd)
  * Purpose: Global navigation and brand identity component.
- * Traceability: Responsive Navigation Improvement
+ * Traceability: Related to GitHub Issue #6
  */
 import DarkModeToggle from './DarkModeToggle.astro';
 
@@ -19,7 +19,7 @@ const navLinks = [
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-secondary-900/80 backdrop-blur-md border-b border-secondary-200 dark:border-secondary-800">
   <div class="container-custom h-16 flex items-center justify-between">
     <!-- Brand -->
-    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+    <a id="header-brand" href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
       <img 
         src="https://avatars.githubusercontent.com/u/182445865?v=4&s=32" 
         alt="iamrichardD Logo"
@@ -119,14 +119,68 @@ const navLinks = [
     });
   }
 
+  function initHeaderBranding() {
+    const isHome = document.body.dataset.isHome === 'true';
+    const headerBrand = document.getElementById('header-brand');
+    const heroBrand = document.getElementById('hero-brand');
+
+    if (!headerBrand) return;
+
+    // If not on home page, branding should always be visible
+    if (!isHome || !heroBrand) {
+      headerBrand.classList.add('is-visible');
+      return;
+    }
+
+    // Set up IntersectionObserver for home page
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // If hero brand is NOT intersecting the area below the 64px header, it means it's hidden under or above it
+        // If it's above (entry.boundingClientRect.top < 64), then show the header brand
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 64) {
+          headerBrand.classList.add('is-visible');
+        } else {
+          headerBrand.classList.remove('is-visible');
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '-64px 0px 0px 0px' // Height of the fixed header
+    });
+
+    observer.observe(heroBrand);
+  }
+
   // Init on load and page changes
   initMobileMenu();
-  document.addEventListener('astro:page-load', initMobileMenu);
+  initHeaderBranding();
+  document.addEventListener('astro:page-load', () => {
+    initMobileMenu();
+    initHeaderBranding();
+  });
 </script>
 
 <style>
   header {
     /* Offset main content so it's not hidden under the fixed header */
     transition: transform 0.3s ease-in-out;
+  }
+
+  #header-brand {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-out;
+  }
+
+  /* Initial state on home page */
+  :global(body[data-is-home="true"]) #header-brand {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+
+  /* Visible state (overrides hidden state on home, and is default for others) */
+  #header-brand.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 </style>

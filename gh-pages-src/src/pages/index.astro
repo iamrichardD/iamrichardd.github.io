@@ -5,7 +5,7 @@
  * File: index.astro
  * Author: Richard D. (https://github.com/iamrichardd)
  * Purpose: Main landing page for personal brand and portfolio.
- * Traceability: Core Architectural Standard
+ * Traceability: Related to GitHub Issue #6
  */
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -24,7 +24,7 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
       <section class="section bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-secondary-900 dark:to-secondary-800">
         <div class="container-custom">
           <div class="max-w-4xl mx-auto text-center">
-            <div class="flex items-center justify-center gap-6 mb-6">
+            <div id="hero-brand" class="flex items-center justify-center gap-6 mb-6">
               <img 
                 src="https://avatars.githubusercontent.com/u/182445865?v=4" 
                 alt="iamrichardD GitHub Avatar"

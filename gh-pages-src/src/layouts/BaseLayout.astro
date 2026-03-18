@@ -5,7 +5,7 @@
  * File: BaseLayout.astro
  * Author: Richard D. (https://github.com/iamrichardd)
  * Purpose: Global layout wrapper for consistent branding and navigation.
- * Traceability: Related to GitHub Issue #5
+ * Traceability: Related to GitHub Issue #6
  */
 import '../styles/global.css';
 import Header from '../components/Header.astro';
@@ -21,6 +21,8 @@ const {
   description = "Senior Engineering Manager specializing in scalable software architecture, team leadership, and innovative technology solutions.",
   image = "https://avatars.githubusercontent.com/u/182445865?v=4"
 } = Astro.props;
+
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -58,7 +60,10 @@ const {
     </script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="72cdde11-d1e4-4a33-9cc3-a00d5fe4651b"></script>
   </head>
-  <body class="antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100 min-h-screen pt-16">
+  <body 
+    class="antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100 min-h-screen pt-16"
+    data-is-home={isHome.toString()}
+  >
     <Header />
     <slot />
     
