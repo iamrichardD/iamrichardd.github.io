@@ -22,7 +22,7 @@ const {
   image = "https://avatars.githubusercontent.com/u/182445865?v=4"
 } = Astro.props;
 
-const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
+const hasHeroBrand = ['/', '/index.html', '/resume', '/resume/index.html'].includes(Astro.url.pathname.replace(/\/$/, ''));
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -62,7 +62,7 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html
   </head>
   <body 
     class="antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100 min-h-screen pt-16"
-    data-is-home={isHome.toString()}
+    data-has-hero-brand={hasHeroBrand.toString()}
   >
     <Header />
     <slot />

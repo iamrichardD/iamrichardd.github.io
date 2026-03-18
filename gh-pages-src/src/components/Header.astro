@@ -120,19 +120,19 @@ const navLinks = [
   }
 
   function initHeaderBranding() {
-    const isHome = document.body.dataset.isHome === 'true';
+    const hasHeroBrand = document.body.dataset.hasHeroBrand === 'true';
     const headerBrand = document.getElementById('header-brand');
     const heroBrand = document.getElementById('hero-brand');
 
     if (!headerBrand) return;
 
-    // If not on home page, branding should always be visible
-    if (!isHome || !heroBrand) {
+    // If page doesn't have a hero brand, branding should always be visible
+    if (!hasHeroBrand || !heroBrand) {
       headerBrand.classList.add('is-visible');
       return;
     }
 
-    // Set up IntersectionObserver for home page
+    // Set up IntersectionObserver for pages with hero brand
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         // If hero brand is NOT intersecting the area below the 64px header, it means it's hidden under or above it
@@ -170,14 +170,14 @@ const navLinks = [
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-out;
   }
 
-  /* Initial state on home page */
-  :global(body[data-is-home="true"]) #header-brand {
+  /* Initial state on pages with hero brand */
+  :global(body[data-has-hero-brand="true"]) #header-brand {
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
   }
 
-  /* Visible state (overrides hidden state on home, and is default for others) */
+  /* Visible state (overrides hidden state on hero pages, and is default for others) */
   #header-brand.is-visible {
     opacity: 1;
     transform: translateY(0);
