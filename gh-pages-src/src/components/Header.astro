@@ -178,7 +178,8 @@ const navLinks = [
   }
 
   /* Visible state (overrides hidden state on hero pages, and is default for others) */
-  #header-brand.is-visible {
+  #header-brand.is-visible,
+  :global(body[data-has-hero-brand="true"]) #header-brand.is-visible {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;

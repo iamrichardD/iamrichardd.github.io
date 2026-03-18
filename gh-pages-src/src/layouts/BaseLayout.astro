@@ -22,7 +22,8 @@ const {
   image = "https://avatars.githubusercontent.com/u/182445865?v=4"
 } = Astro.props;
 
-const hasHeroBrand = ['/', '/index.html', '/resume', '/resume/index.html'].includes(Astro.url.pathname.replace(/\/$/, ''));
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const hasHeroBrand = ['/', '/index.html', '/resume', '/resume/index.html'].includes(normalizedPath);
 ---
 
 <html lang="en" class="scroll-smooth">
