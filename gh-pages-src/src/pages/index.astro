@@ -14,6 +14,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 const projects = await getCollection('projects');
 const pharosProject = projects.find(p => p.slug === 'pharos');
 const dotagentsProject = projects.find(p => p.slug === 'dotagents');
+const pkdProject = projects.find(p => p.slug === 'pkd');
 ---
 
 <BaseLayout>
@@ -144,8 +145,11 @@ const dotagentsProject = projects.find(p => p.slug === 'dotagents');
                   </div>
 
                   <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Impact: Pharos</h4>
-                    {pharosProject && <ProjectCard project={pharosProject} featured={true} />}
+                    <h4 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-4">Featured Impact: Pharos Ecosystem</h4>
+                    <div class="grid gap-6">
+                      {pharosProject && <ProjectCard project={pharosProject} featured={true} />}
+                      {pkdProject && <ProjectCard project={pkdProject} featured={true} />}
+                    </div>
                   </div>
 
                   <div class="mb-6">
