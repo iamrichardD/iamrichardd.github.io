@@ -15,6 +15,7 @@ const projects = await getCollection('projects');
 const pharosProject = projects.find(p => p.slug === 'pharos');
 const dotagentsProject = projects.find(p => p.slug === 'dotagents');
 const pkdProject = projects.find(p => p.slug === 'pkd');
+const pabProject = projects.find(p => p.slug === 'pab');
 ---
 
 <BaseLayout>
@@ -149,6 +150,7 @@ const pkdProject = projects.find(p => p.slug === 'pkd');
                     <div class="grid gap-6">
                       {pharosProject && <ProjectCard project={pharosProject} featured={true} />}
                       {pkdProject && <ProjectCard project={pkdProject} featured={true} />}
+                      {pabProject && <ProjectCard project={pabProject} featured={true} />}
                     </div>
                   </div>
 

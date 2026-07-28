@@ -1,0 +1,48 @@
+---
+title: "Pharos Advanced Blocking: A Deterministic Control Plane for DNS Policy"
+description: "Closing the gap between declarative blocking intent and live network enforcement — a statically-compiled CLI/TUI control plane for Technitium DNS Server, built AI-agent-native from the ground up."
+publishDate: "July 28, 2026"
+role: "Principal Systems Architect"
+tags: ["DNS Security", "Zero-Trust", "Agentic Engineering", "Infrastructure", "AGPL-3.0"]
+methods: ["Vertical Slice Architecture", "TDD", "Mob Programming Review Gate", "Podman-Native CI/CD"]
+links:
+  github: "https://github.com/iamrichardD/pharos-advanced-blocking"
+  site: "https://iamrichardd.com/pharos-advanced-blocking/"
+---
+
+# The Mission: Closing the Config-to-Enforcement Gap
+
+DNS blocking policy is only as good as the config that's actually running on the server. Technitium DNS Server's Advanced Blocking App stores that policy as raw JSON — hand-edited, easy to desync from what an operator *believes* is deployed, and with no built-in way to confirm a blocking rule is actually taking effect on the wire.
+
+**Pharos Advanced Blocking (`pab`)** closes that gap. It's a statically-compiled, cross-platform CLI and terminal UI that treats DNS blocking policy as a deterministic, version-controllable artifact — validated before it's written, diffed before it's deployed, and verified live against real DNS resolution before anyone calls the job done.
+
+## Strategic Foundation
+
+Born from direct home-network operation of Technitium DNS Server, `pab` is grounded in the same discipline that governs the rest of this portfolio: infrastructure state should never be a matter of belief. It should be checkable.
+
+### Narrative Architecture
+*   **The Practitioner Root:** Built to solve a real, recurring problem — hand-editing `dnsApp.config` JSON with no validation, no diff, and no confirmation that a blocked domain was actually blocked.
+*   **The Enterprise Discipline, Home-Lab Scale:** AGPL-3.0 licensed, Cosign-signed releases, and a mandatory mob-programming review gate — the same rigor applied to enterprise-grade infrastructure, applied here to a single-binary CLI.
+
+## The Engineering "How": Methodological Rigor
+
+### 1. Deterministic Bootstrap, Never Silent
+`pab init` resolves credentials, fetches the *live* configuration directly from the running Technitium server (falling back to a minimal template only when the server has none yet), previews what it found, and requires explicit confirmation before writing anything to disk. If multiple nodes are configured and their live state disagrees, `pab` refuses to guess — it surfaces the drift and requires an explicit, named source of truth. Nothing is ever silently overwritten.
+
+### 2. Verified, Not Assumed
+Most DNS tooling stops at "config was pushed to the API." `pab verify` closes the loop: it live-queries the target node's DNS resolver and confirms a domain actually resolves as blocked — the difference between "I deployed a change" and "I confirmed the change is real."
+
+### 3. TDD & Mob-Gated Review
+Every change ships through a Podman-containerized test/build/vet cycle, then a mob-programming review panel — independent personas covering Go idiom, security posture, domain modeling, and UX — before merge. Nothing merges on a single reviewer's say-so, including the author's.
+
+## Multi-Modal Empowerment
+
+### For the Operator
+The CLI/TUI dual interface (`pab map`, `pab deploy --dry-run`, `pab verify`) turns hand-edited JSON into validated, diffable, confirmable operations — a structural diff before every deploy, never a blind push.
+
+### For the AI Agent
+`pab init` and `pab verify` ship `--json` output specifically for script and AI-agent consumption, part of a design philosophy extending across the tool's command surface — and both capabilities described here were themselves built through a documented multi-agent orchestration workflow: an orchestrating agent handling planning and premise-verification, cheap-model subagents executing narrowly-specified mechanical work, and independent review-panel agents gating every change before it landed. The tool and its own development process share the same underlying discipline.
+
+## Conclusion: Infrastructure You Don't Have to Trust — Only Verify
+
+`pab` is a small, deliberately-scoped instance of a larger conviction: the value of infrastructure tooling isn't in what it claims to do, it's in what it lets you *check*. Validated config, diffed deployment, and live-verified enforcement — the whole path from intent to confirmed reality, in one statically-linked binary.
